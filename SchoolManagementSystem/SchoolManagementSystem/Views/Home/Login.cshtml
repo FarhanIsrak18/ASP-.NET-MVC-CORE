@@ -1,0 +1,35 @@
+﻿@model SchoolManagementSystem.Models.AllUsers
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<body>
+
+<h2>Login Form</h2>
+
+<form action="Login" method="post">
+        <!--<div class="imgcontainer">
+          <img src="img_avatar2.png" alt="Avatar" class="avatar">
+        </div>-->
+
+  <div class="container">
+    <label for="Email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="Email" required>
+
+    <label for="Password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="Password" required>
+
+            <button type="submit" class="btn btn-primary">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+</body>

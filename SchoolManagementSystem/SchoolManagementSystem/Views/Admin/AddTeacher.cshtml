@@ -1,0 +1,35 @@
+﻿@model SchoolManagementSystem.Models.Teachers;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post" action="AddTeacher">
+    <div class="registration">
+        <h3 class="">Teacher Registration From</h3>
+
+        <div class="form-group">
+            <label for="exampleInputEmail1">Name</label>
+            <input type="text" class="form-control" placeholder="Enter Name" asp-for="Name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" placeholder="Enter Email" asp-for="Email">
+        </div><div class="form-group">
+            <label for="">Phone Number</label>
+            <input type="text" class="form-control" placeholder="Enter Email" asp-for="PhoneNumber">
+        </div>
+        <div class="form-group">
+            <label for="SubjectExpertise">Subject Expertise</label>
+
+            <select id="role" asp-for="SubjectExpertise" class="form-control" placeholder="click to select Subject">
+                <option value="bangla">Bangla</option>
+                <option value="english">English</option>
+                <option value="math">Math</option>
+                <option value="science">Science</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>

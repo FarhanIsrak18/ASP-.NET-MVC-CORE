@@ -1,0 +1,28 @@
+﻿@model SchoolManagementSystem.Models.Departments;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<body>
+
+    <h2>Add Department</h2>
+
+    <form action="AddDepartment" method="post">
+        <div class="container">
+            <label for="DepartmentName"><b>Department Name</b></label>
+            <input type="text" placeholder="Enter Department Name" name="DepartmentName" required>
+
+            <label for="DepartmentCode"><b>Department Code</b></label>
+            <input type="text" placeholder="Enter Department code" name="DepartmentCode" required>
+
+            <label for="DepartmentDescription"><b>Description</b></label>
+            <textarea placeholder="Enter Description" id="departmentDes" name="DepartmentDescription" required></textarea>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        </div>
+    </form>
+
+</body>

@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<body>
+
+    <h2>Add Gaurdian Information</h2>
+
+    <form action="AddGaurdian" method="post">
+        <div class="container">
+            <label for="GuardianName"><b>Gaurdian Name</b></label>
+            <input type="text" placeholder="Enter Gaurdian Name" name="GuardianName" required>
+
+            <label for="PhoneNumber"><b>PhoneNumber</b></label>
+            <input type="text" placeholder="Enter PhoneNumber" name="PhoneNumber" required>
+        </div>
+            <div class="form-group">
+            <label for="Relation">Relation:</label>
+            <select id="role" name="Relation" class="form-control" placeholder="click to select Relation">
+                <option value="Father">Father</option>
+                <option value="Mother">Mother</option>
+                <option value="Brother">Brother</option>
+                <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+        
+    </form>
+
+</body>

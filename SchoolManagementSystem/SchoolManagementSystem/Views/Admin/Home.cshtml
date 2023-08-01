@@ -1,0 +1,75 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+ <div class="" id="homeTop">
+    <div><h3 class="card">Total students: @ViewBag.TotalStudents</h3></div>
+    <div><h3 class="card">Total Teachers: @ViewBag.TotalTeachers</h3></div>
+    
+</div>
+<div class="text-center">
+    <h1 class="display-4">Admin home page</h1>
+</div>
+<div class="left_home">
+    <div class="container">
+        <div><a href="~/Admin/StudentsList">Students list</a></div>
+    </div>
+    <div class="container">
+        <div><a href="~/Home/Registration">Add User</a></div>
+    </div>
+    <div class="container">
+        <div><a href="~/Admin/TeachersList">Teachers list</a></div>
+    </div>
+    <div class="container">
+        <div><a href="~/Admin/AddDepartment">Add Department</a></div>
+    </div>
+    <div class="container">
+        <div><a href="~/Department/View">View Departments</a></div>
+    </div>
+    <div class="container">
+        <div><a href="~/Admin/AddTeacher">Add Teacher</a></div>
+    </div>
+    <div class="container">
+        <div><a href="~/Admin/TeacherATDepartment">Assign Teacher to Department</a></div>
+    </div>
+    <div class="container">
+        <div><a href="~/Admin/ViewGaurdian">View guardian list</a></div>
+    </div>
+</div>
+<div id="myChart" style="width:100%; max-width:600px; height:500px;">
+</div>
+
+<script>
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+
+        // Set Data
+        const data = google.visualization.arrayToDataTable([
+            ['Contry', 'Mhl'],
+            ['Excellent', @ViewBag.Exc],
+            ['Average', @ViewBag.Avg],
+            ['Bad', @ViewBag.Bad],
+        ]);
+
+        // Set Options
+        const options = {
+            title: 'Students Result Status',
+            is3D: true
+        };
+
+        // Draw
+        const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+        chart.draw(data, options);
+    }
+</script>
+</html>

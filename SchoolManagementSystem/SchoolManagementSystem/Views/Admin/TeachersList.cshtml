@@ -1,0 +1,36 @@
+﻿@model List<SchoolManagementSystem.Models.AllUsers>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="text-center">
+    <h1 class="display-4">This is Teacher list showing page</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var teachers in Model)
+            {
+                <tr>
+                    <td>@teachers.Id</td>
+                    <td>@teachers.Name</td>
+                    <td>@teachers.Email</td>
+                    <td><a href="View/@teachers.Id">View</a></td>
+                    <td><a href="Delete/@teachers.Id">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

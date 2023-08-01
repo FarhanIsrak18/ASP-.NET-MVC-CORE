@@ -1,0 +1,47 @@
+﻿@model List<SchoolManagementSystem.Models.Guardian>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="text-center">
+    <h1 class="display-4">This is Gaurdian list showing page</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>PhoneNumber</th>
+                <th>Relation</th>
+                <th>StudentName</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var guardians in Model)
+            {
+                <tr>
+                    <td>@guardians.GuardianId</td>
+                    <td>@guardians.GuardianName</td>
+                    <td>@guardians.Relation</td>
+                    <td>@guardians.PhoneNumber</td>
+                    <td>@guardians.StudentName</td>
+                    <td>
+                        <a type="button" id="delete" onclick="alert('Delete user!!!')"
+                           href="@Url.Action("deleteGaurdian", "Admin", new { GuardianId = guardians.GuardianId })">
+                            Delete
+                        </a>
+                    </td>
+                    <td><a href="UpdateGuardian/@guardians.StudentId">Update Guardian</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

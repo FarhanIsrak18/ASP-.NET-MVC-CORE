@@ -1,0 +1,52 @@
+﻿@model SchoolManagementSystem.Models.TeacherAssignmentViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Assignment to Department</title>
+    <!-- Add your CSS stylesheets or link to a CSS file here -->
+</head>
+<body>
+    <h1>Teacher Assignment to Department</h1>
+
+    <!-- Teacher Assignment Form -->
+    <form id="teacherAssignmentForm" method="post" action="TeacherATDepartment">
+        <label for="teacherSelect">Select Teacher:</label>
+        <select id="teacherSelect" name="teacherId">
+            @if (Model.Teachers != null)
+            {
+                @foreach (var teacher in Model.Teachers)
+                {
+                    <option value="@teacher.TeacherId">@teacher.Name</option>
+                }
+            }
+            </select>
+        </select>
+
+        <label for="departmentSelect">Select Department:</label>
+        <select id="departmentSelect" name="departmentId">
+            @if (Model.Departments != null)
+            {
+                @foreach (var department in Model.Departments)
+                {
+                    <option value="@department.DepartmentId">@department.DepartmentName</option>
+                }
+            }
+            
+        </select>
+
+        <button type="submit">Assign</button>
+    </form>
+</body>
+</html>

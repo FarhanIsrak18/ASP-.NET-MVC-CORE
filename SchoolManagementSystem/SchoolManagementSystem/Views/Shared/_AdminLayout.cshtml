@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SchoolManagementSystem</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SchoolManagementSystem.styles.css" asp-append-version="true" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    
+    <div class="sidebar">
+        <a href="~/Admin/Home"><img src="~/images/admin.png" alt="My Image" width="150" height="100"></a>
+        <a href="~/Admin/Home">Home</a>
+        <a href="~/Admin/Profile">MY Profile</a>
+        <a href="~/Admin/ChangePassword">Change Password</a>
+        <a href="#about">About</a>
+    </div>
+    <div class="content">
+        @RenderBody()
+    </div>
+</body>
+</html>

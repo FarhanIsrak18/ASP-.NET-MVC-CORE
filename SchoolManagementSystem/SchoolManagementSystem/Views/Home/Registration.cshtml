@@ -1,0 +1,37 @@
+﻿@model SchoolManagementSystem.Models.AllUsers
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+<form method="post" action="Registration">
+    <div class="registration">
+    <h3 class="">Registration From</h3>
+  
+    <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" class="form-control" placeholder="Enter Name" asp-for="Name">
+    </div>
+    <div class="form-group">
+       <label for="exampleInputEmail1">Email</label>
+       <input type="text" class="form-control" placeholder="Enter Email" asp-for="Email">
+    </div>
+     <div class="form-group">
+        <label for="exampleInputEmail1">Password</label>
+        <input type="text" class="form-control" placeholder="Enter Password" asp-for="Password">
+    </div>
+     <div class="form-group">
+        <label for="role">Role:</label>
+
+            <select id="role" asp-for="Role" class="form-control" placeholder="click to select Role">
+                <option value="student">student</option>
+                <option value="teacher">teacher</option>
+                <option value="admin">admin</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
